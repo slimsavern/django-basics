@@ -1,0 +1,16 @@
+<html>
+	<head>
+		<title>Hello</title>
+	</head>
+	<body>
+		<h1>Hello World</h1>
+
+		{%for product in products%}
+		<a href="/myapp/products/{{product.id}}">
+			<h2>{{product.name}}</h2>
+			-{{product.price}}-{{product.desc}}<br />
+			<a> AA {{product.name}}</a>
+		</a>
+		{%endfor%}
+	</body>
+</html>
