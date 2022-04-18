@@ -1,12 +1,15 @@
+{% load static %}
 <html>
 	<head>
 		<title>Hello</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+		<link rel="stylesheet" href="{% static 'myapp/styles.css' %}" />
 	</head>
 	<body>
 		<h1>Hello World</h1>
 
 		{%for product in products%}
-		<a href="/myapp/products/{{product.id}}">
+		<a href="{% url 'myapp:product_detail' product.id%}">
 			<h2>{{product.name}}</h2>
 			-{{product.price}}-{{product.desc}}<br />
 			<a> AA {{product.name}}</a>
