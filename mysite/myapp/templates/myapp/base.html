@@ -19,8 +19,17 @@
 
 						<div class="items-center flex space-x-1">
 							<a href="#" class="px-2 py-4 text-gray font-semibold border-b-4 border-green-500">Home</a>
-							<a href="#" class="px-2 py-4 text-gray font-semibold">About</a>
-							<a href="#" class="px-2 py-4 text-gray font-semibold">Contact</a>
+							<a href="{% url 'myapp:add_product' %}" class="px-2 py-4 text-gray font-semibold">Post An Add</a>
+							<a href="{% url 'myapp:products' %}" class="px-2 py-4 text-gray font-semibold">View Products</a>
+
+							{% if user.is_authenticated %}
+							<a class="px-2 py-4 text-gray font-semibold" href="{% url 'users:profile' %}" class="px-2 py-4 text-gray font-semibold">Profile</a>
+							<a class="px-2 py-4 text-gray font-semibold" href="{% url 'myapp:mylistings' %}" class="px-2 py-4 text-gray font-semibold">My Listings</a>
+							<a class="px-2 py-4 text-gray font-semibold" href="{% url 'users:logout' %}" class="px-2 py-4 text-gray font-semibold">Logout</a>
+
+							{% else %}
+							<a class="px-40 py-4 text-gray font-semibold" href="{% url 'users:login' %}" class="px-2 py-4 text-gray font-semibold">Login</a>
+							{% endif %}
 						</div>
 					</div>
 				</div>
